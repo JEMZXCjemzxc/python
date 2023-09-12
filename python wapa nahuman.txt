@@ -1,0 +1,49 @@
+print("Jemzxc Shop")
+print("--------------------------------------")
+product = [
+    ["Tanduay", 35.50],
+    ["Gin Bilog",45.50],
+    ["Beer",130.50]
+]
+
+for i in range(len(product)):
+    itemJemzxc = product[i]
+    print(f"{i+1}.{itemJemzxc[0]}-{itemJemzxc[1]:.2f}") #mao ni ang pag print sa mga products sa babaw
+print("--------------------------------------")
+
+order = [] # mao ni ang empty list nga maoy nag silbi nga shopping cart if naay paliton
+
+ord = int(input("Enter num to enter: "))
+
+order.append(product[ord-1][0:2]) #--- ug unsay imong gi input ma add or append sa empty list nga order
+orders = product[ord-1][0] #pag homan ug add sa empty list,  ato gi assignan ug variable nga orders para dali ra ma print sa ubos
+
+print("You have ordered: "+orders) # kani nga line of code para ma print ang word nga "Tanduay"
+
+print()
+print("your cart: ")
+
+for j in range(len(order)): #kani nga loop is para ma print nato ang sulod sa shopping cart through loop
+    itemJemzxc2 = order[j]
+    print(f"{j+1}.{itemJemzxc2[0]} - {itemJemzxc2[1]}")
+
+    again = input("Order again? (y/n) :  ")
+if(again == "y"):
+    print()#temporary rani pra di mag error
+    #butangan ug loop para mu balik pangayo ug palitonon
+elif(again == "n"):
+    #loop sad ni
+
+    while True: #loop diri balik if mas gamay ang kwarta sa price
+        money = int(input("Enter Cash: "))
+        if(money < itemJemzxc2[1]): #gi tawag ra natog index sa mga price sa itemJemzxc[1]
+            print("Not enough money!")
+            continue #meaning sa continue, mu balik sa while true
+            #loop balik sa order again
+        else:
+            print("Thank you for buying!")
+        break # dapat i tungod ang break sa else para ma stop ang loop
+
+
+
+
