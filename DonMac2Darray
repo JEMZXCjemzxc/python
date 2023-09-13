@@ -1,0 +1,66 @@
+Item = [
+    ["Don Darco",20.90],
+    ["Doña Berry",30],
+    ["Cappuccino",50.78],
+    ["Coffee w/o Coffee", 100],
+    ["Iced Coffee", 90]
+]
+choice =""
+while True:
+    for i in range(len(Item)):
+        itemMenu = Item[i]
+        print(f"{i + 1}.{itemMenu[0]} - P {itemMenu[1]:.2f}")
+    while True:
+        try:
+            print("Pressed 9 to add")
+            order = int(input("Enter Order:")) - 1
+            if order==8:
+                itemAdd = input("Item:")
+                priceAdd = int(input("Price:"))
+                Item.append([itemAdd,priceAdd])
+            if order<0 or order>len(Item)-1:
+                print("Out of Bounds")
+            
+            else:
+                break
+        except:
+            print("Whole Numbers Only")
+    while True:
+        try:
+            quantity = int(input("Enter Quantity:"))
+            if(quantity<1):
+                print("Out of Bounds")
+            else:
+                break
+        except:
+            print("Whole Numbers Only")
+    price = Item[order][1]
+    itemChosen = Item[order][0]   
+    print("You have Ordered " + itemChosen)
+    total = price * quantity
+    print(f"Quantity: {quantity}")
+    print(f"Total:{total}")
+    
+    while True:
+        try:
+            payment = float(input("Enter Payment:"))
+            if(payment<total):
+                print("Insufficient Money")
+            else:
+                break
+        except:
+            print("Whole Numbers Only")
+    print("Item:" + itemChosen)
+    print(f"Payment: {payment:.2f}")
+    print(f"change {payment - total}")
+    while True:
+        choice = input("Do you want to Order Again?[y/n]:")
+        if choice =="y":
+            break
+        elif choice =="n":
+            print("Thank you for Using")
+            break
+        else:
+            print("y/n Only")
+    if choice == "n":
+        break
