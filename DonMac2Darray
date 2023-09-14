@@ -1,108 +1,36 @@
-#NEW
-menu = ["Don Darco", "Dona Berry", "Cappuccino", "Coffee w/out Iced", "Iced Coffee"]
-prices = ["P39.50", "P39.00", "P39.25", "P40.50", "P39.00"]
-orders = []
-total = 0
-loop = True
-mainLoop = True
+C:\Users\CSDPC\PycharmProjects\pythonProject8\venv\Scripts\python.exe C:\Users\CSDPC\PycharmProjects\pythonProject8\main.py 
+Don Machiatto's Coffee Menu
+1. Don Darco - P39.50
+2. Dona Berry - P39.00
+3. Cappuccino - P39.25
+4. Coffe w/out Iced - P40.50
+5. Iced Coffee - P39.00
+Press 9 to add product
+-----------------------------------
+Enter choice: sdfgdg
+Invalid input!
+Enter choice: 1
+You ordered Don Darco
+Your payment balance is 
+39.5
+Order again? (y/n) : 212
+Invalid Input
+Order again? (y/n) : n
+Enter Money: 123121
+---------------------
+Receipt
+---------------------
+Your Orders: 
+Don Darco
+P39.50
+---------------------
+Total: 
+39.5
+---------------------
+Change: 
+123081.5
+---------------------
+---------------------
+Thank you for Ordering!
 
-print("Don Machiatto's Coffee Menu")
-print("1. Don Darco - P39.50")
-print("2. Dona Berry - P39.00")
-print("3. Cappuccino - P39.25")
-print("4. Coffe w/out Iced - P40.50")
-print("5. Iced Coffee - P39.00")
-print("Press 9 to add product")
-print("-----------------------------------")
-
-while mainLoop:
-    while loop:
-        choice = input("Enter choice: ")
-        if choice == "1":
-            orders.append(menu[0])
-            print("You ordered Don Darco")
-            loop = False
-            total += 39.50
-            print("Your payment balance is ")
-            print(total)
-
-        elif choice == "2":
-            orders.append(menu[1])
-            print("You ordered Dona Berry")
-            loop = False
-            total += 39.00
-            print("Your payment balance is:")
-            print(total)
-
-        elif choice == "3":
-            orders.append(menu[2])
-            print("You ordered Cappuccino")
-            loop = False
-            total += 39.25
-            print("Your payment balance is:")
-            print(total)
-
-        elif choice == "4":
-            orders.append(menu[3])
-            print("You ordered Coffee w/out Iced")
-            loop = False
-            total += 40.50
-            print("Your payment balance is:")
-            print(total)
-
-        elif choice == "5":
-            orders.append(menu[4])
-            print("Your ordered Iced Coffee")
-            loop = False
-            total += 39.00
-            print("Your payment balance is:")
-            print(total)
-
-        elif choice == "9":
-            # input("Add item:")
-            menu.append(input("Add Product: "))
-            print(menu)
-            loop = True
-        else:
-            print("Invalid input!")
-
-    orderAgainLoop = True
-    while orderAgainLoop:
-        again = input("Order again? (y/n) : ")
-        if again == "y":
-            orderAgainLoop = False
-            loop = True
-
-        elif again == "n":
-
-            cash = True
-            while cash:
-                money = int(input("Enter Money: "))
-                if money<total:
-                    print("Not Enough Cash!")
-                    cash = True
-                else:
-                    orderAgainLoop = False
-                    mainLoop = False
-                    loop = False
-                    cash = False
-        else:
-            print("Invalid Input")
-
-print("---------------------")
-print("Receipt")
-print("---------------------")
-print("Your Orders: ")
-j = 0
-for i in orders:
-    print(orders[j] )
-    print(prices[j])
-    j+=1
-print("---------------------")
-print("Total: ")
-print(total)
-print("---------------------")
-print("Change: ")
-print(money-total)
-print("---------------------")
-print("---------------------")
+Process finished with exit code 0
